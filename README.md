@@ -1,55 +1,56 @@
 # Prikankshit Mor — Personal Portfolio
 
-A bold, Neo-Brutalist personal portfolio website showcasing global strategy, program management, and tech leadership expertise.
+A simple, minimalist brutalist personal portfolio website showcasing global strategy, program management, and tech leadership expertise.
 
 ## 🎨 Design
 
-**Neo-Brutalist aesthetic** built around two brand colors:
+**Minimalist Brutalist aesthetic** built around a high-contrast pair of brand colors:
 
 | Token | Color | Usage |
 |-------|-------|-------|
-| Midnight Blue | `#101827` | Borders, text, shadows |
-| Dark Orange | `#FF4D00` | Accents, CTAs, hover shadows |
+| Midnight Blue | `#101827` | Primary text, borders, structure |
+| Dark Orange | `#FF4D00` | Accents, highlights, buttons |
 
 **Key design features:**
-- Thick `4px` solid borders with flat offset shadows
-- Sharp edges — zero border-radius
-- Subtle CSS dot-grid background pattern
-- Oversized, uppercase typography via [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
-- Mobile-first responsive layout with hamburger navigation
+- Clean `2px` solid borders for structural definition
+- Sharp edges and high-contrast elements
+- Minimal whitespace and streamlined typography via [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
+- Unified card system for both Expertise and Work sections
+- Mobile-first responsive layout with an animated hamburger navigation
 
 ## 📁 Structure
 
 ```
 website/
-├── index.html          # Single-page layout
+├── index.html          # Clean single-page structure
 ├── css/
-│   └── styles.css      # All styles + responsive breakpoints
+│   └── styles.css      # Custom minimalist minimalist brutalist styles
 ├── js/
-│   └── script.js       # Mobile nav toggle + scroll animations
+│   └── script.js       # Responsive nav & scroll behavior
 ├── assets/             # Images & media
-└── content/            # Research & text content
+└── content/            # Research & documentation
 ```
 
 ## 🧩 Sections
 
-- **Hero** — Bold headline with CTA buttons
-- **About** — Bio with skill tags + character stats card
-- **Expertise** — 3-column service cards (Strategic Vision, Program Management, Tech Adoption)
-- **Work** — Project cards with tech tags
-- **Contact** — Orange CTA block with social links
-- **Footer** — Minimal copyright
+- **Hero** — Impactful intro with clear CTAs
+- **About** — Strategic bio with character stats & skill tags
+- **Expertise** — Multi-column service cards (Strategic Vision, Program Management, Tech Leadership)
+- **Work** — Simplified project cards matching the Expertise style (title, icon, description)
+- **Contact** — Minimalist CTA block with LinkedIn & Email links
+- **Footer** — Clean copyright line
 
 ## 🛠 Tech Stack
 
-- **HTML5** + **CSS3** (vanilla, no frameworks)
-- [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) & [Space Mono](https://fonts.google.com/specimen/Space+Mono) fonts
-- [Remix Icon](https://remixicon.com/) icon library
-- Intersection Observer API for scroll animations
+- **HTML5** + **CSS3** (Pure CSS, no frameworks)
+- [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) & [Space Mono](https://fonts.google.com/specimen/Space+Mono) typography
+- [Remix Icon](https://remixicon.com/) font library
+- Native JavaScript for interactions
 
-## 🚀 Run Locally
+## 🚀 Deployment
 
-Just open `index.html` in a browser — no build step required.
+- Optimized for fast loading and mobile responsiveness.
+- Just open `index.html` — Zero dependencies or build steps.
 
 ## 📄 License
 
