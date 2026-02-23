@@ -578,7 +578,7 @@ footer {
 
     .greeting {
         font-size: 0.9rem;
-        box-shadow: 2px 2px 0px var(--midnight-blue);
+        box-shadow: none;
     }
 
     .btn {
