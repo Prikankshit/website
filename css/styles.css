@@ -256,9 +256,13 @@ h1 {
 
 /* --- Project Grid --- */
 .project-link {
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
-    display: contents;
+    display: block;
+}
+
+.project-link * {
+    text-decoration: none !important;
 }
 
 .projects-grid {
