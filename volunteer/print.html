@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tribute – Presentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@page{size:1280px 720px;margin:0}
+html,body{background:#060B18;color:#F1F5F9;font-family:'DM Sans',sans-serif}
+:root{
+  --primary:#2563EB;--primary-light:#3B82F6;--secondary:#84CC16;
+  --bg:#060B18;--bg2:#0A1128;
+  --glass:rgba(255,255,255,0.05);--glass-border:rgba(255,255,255,0.10);
+  --text:#F1F5F9;--muted:#94A3B8;
+}
+.slide{
+  width:1280px;height:720px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:48px 64px;page-break-after:always;break-after:page;
+  background:#060B18;
+}
+.slide::before{content:'';position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.3) 0%,transparent 70%);top:-200px;left:-200px;z-index:0}
+.slide::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(132,204,22,.15) 0%,transparent 70%);bottom:-100px;right:-100px;z-index:0}
+.slide>*{position:relative;z-index:1}
+.grid-bg{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.heading-xl{font-family:'Plus Jakarta Sans',sans-serif;font-size:3.6rem;font-weight:800;line-height:1.1;letter-spacing:-0.02em}
+.heading-lg{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.4rem;font-weight:700;line-height:1.2}
+.gradient-text{background:linear-gradient(135deg,#fff 0%,#3B82F6 50%,#84CC16 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.badge-blue{background:rgba(37,99,235,.2);border:1px solid rgba(59,130,246,.3);color:#93C5FD}
+.badge-green{background:rgba(132,204,22,.15);border:1px solid rgba(132,204,22,.3);color:#BEF264}
+.logo-mark{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
+.logo-mark .icon{width:44px;height:44px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.logo-mark span{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700}
+.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hero-tag{padding:8px 18px;border-radius:100px;background:var(--glass);border:1px solid var(--glass-border);font-size:.85rem;color:var(--muted)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;width:100%;max-width:860px}
+.problem-card{padding:24px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.problem-card .picon{font-size:1.8rem;margin-bottom:12px}
+.problem-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;margin-bottom:8px}
+.problem-card p{font-size:.88rem;color:var(--muted);line-height:1.6}
+.solution-items{display:flex;flex-direction:column;gap:14px;margin-top:28px;max-width:700px;width:100%}
+.sol-item{display:flex;align-items:flex-start;gap:16px;padding:18px 22px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.sol-dot{width:10px;height:10px;border-radius:50%;background:var(--secondary);margin-top:5px;flex-shrink:0;box-shadow:0 0 8px var(--secondary)}
+.sol-item h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:4px}
+.sol-item p{font-size:.85rem;color:var(--muted)}
+.screen-slide{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center;width:100%;max-width:1100px}
+.screen-slide .content .slide-num{font-size:.75rem;font-weight:700;color:var(--primary-light);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.screen-slide .content h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;line-height:1.2;margin-bottom:16px}
+.screen-slide .content p{font-size:.95rem;color:var(--muted);line-height:1.75;margin-bottom:20px}
+.deco-line{width:48px;height:3px;background:linear-gradient(90deg,var(--primary-light),var(--secondary));border-radius:2px;margin-bottom:20px}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.feature-list li{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted)}
+.feature-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--secondary);flex-shrink:0;box-shadow:0 0 6px var(--secondary)}
+.screen-img-wrap{border-radius:20px;overflow:hidden;border:1px solid var(--glass-border);box-shadow:0 0 60px rgba(37,99,235,.2),0 24px 48px rgba(0,0,0,.5)}
+.screen-img-wrap img{display:block;width:100%;height:auto}
+.tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px;max-width:680px;width:100%}
+.tech-card{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.tech-icon{font-size:1.8rem;flex-shrink:0}
+.tech-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:2px}
+.tech-card p{font-size:.8rem;color:var(--muted)}
+.cta-stats{display:flex;gap:40px;justify-content:center;margin-bottom:40px}
+.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,var(--primary-light),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:4px}
+.stat{text-align:center}
+.cta-btn{display:inline-block;padding:14px 36px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:#fff;text-decoration:none;box-shadow:0 0 32px rgba(37,99,235,.4);border:none}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HERO -->
+<div class="slide" style="text-align:center">
+  <div class="grid-bg"></div>
+  <div class="logo-mark"><div class="icon">🤝</div><span>Tribute</span></div>
+  <div style="margin-bottom:20px"><span class="badge badge-green">✦ Volunteer Operations Platform</span></div>
+  <h1 class="heading-xl gradient-text">Next-Generation<br>Volunteer Coordination</h1>
+  <p style="font-size:1.15rem;color:#94A3B8;max-width:520px;line-height:1.7;margin:16px auto 32px">A centralized, real-time ecosystem that connects organizations and volunteers — from shift planning to live attendance tracking.</p>
+  <div class="hero-tags">
+    <div class="hero-tag">🚀 Next.js 16</div>
+    <div class="hero-tag">📱 PWA Ready</div>
+    <div class="hero-tag">🤖 AI Matching</div>
+    <div class="hero-tag">⚡ Real-Time</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: PROBLEM -->
+<div class="slide" style="text-align:center">
+  <div class="grid-bg"></div>
+  <div style="margin-bottom:0"><span style="font-size:.75rem;font-weight:700;color:#3B82F6;letter-spacing:.1em;text-transform:uppercase">The Problem</span></div>
+  <h2 class="heading-lg" style="margin:8px 0">Fragmented <span style="color:#3B82F6">Coordination</span> Slows Everything Down</h2>
+  <p style="color:#94A3B8;font-size:.95rem;max-width:560px;margin:0 auto">Organizations struggle with disjointed tools, manual processes, and zero visibility into their volunteer operations.</p>
+  <div class="problem-grid">
+    <div class="problem-card"><div class="picon">📋</div><h3>Manual Assignment</h3><p>Assigning volunteers to shifts by spreadsheet is error-prone and doesn't consider skills or availability.</p></div>
+    <div class="problem-card"><div class="picon">📡</div><h3>No Real-Time Visibility</h3><p>Supervisors have no live view of who's checked in, who's late, or what roles remain unfilled during an event.</p></div>
+    <div class="problem-card"><div class="picon">🗂️</div><h3>Siloed Systems</h3><p>Scheduling, communications, and reporting live in separate tools with no unified source of truth.</p></div>
+    <div class="problem-card"><div class="picon">📞</div><h3>Chaotic Communication</h3><p>Last-minute changes require frantic calls and texts with no formal escalation path.</p></div>
+  </div>
+</div>
+
+<!-- SLIDE 3: SOLUTION -->
+<div class="slide" style="text-align:center">
+  <div class="grid-bg"></div>
+  <span class="badge badge-blue" style="margin-bottom:16px">✦ The Solution</span>
+  <h2 class="heading-lg" style="margin-bottom:12px">One Unified <span class="gradient-text">Platform</span> for Everything</h2>
+  <p style="color:#94A3B8;margin-bottom:32px;line-height:1.7;max-width:600px">Tribute brings together scheduling, attendance, AI matching, and supervisor tools under a single, intuitive experience.</p>
+  <div class="solution-items">
+    <div class="sol-item"><div class="sol-dot"></div><div style="text-align:left"><h3>Centralized Scheduling</h3><p>Browse, filter, and sign up for shifts with calendar integration and real-time seat availability.</p></div></div>
+    <div class="sol-item"><div class="sol-dot"></div><div style="text-align:left"><h3>Live Attendance Tracking</h3><p>QR-code check-in and supervisor dashboards give instant visibility across all active shifts.</p></div></div>
+    <div class="sol-item"><div class="sol-dot"></div><div style="text-align:left"><h3>AI-Powered Auto-Match</h3><p>Automatically assign the right volunteers to the right roles based on certified skills and availability.</p></div></div>
+    <div class="sol-item"><div class="sol-dot"></div><div style="text-align:left"><h3>Role-Based Access</h3><p>Tailored views for Admins, Supervisors, and Volunteers — everyone sees exactly what they need.</p></div></div>
+  </div>
+</div>
+
+<!-- SLIDE 4: DASHBOARD -->
+<div class="slide">
+  <div class="grid-bg"></div>
+  <div class="screen-slide">
+    <div class="content"><div class="slide-num">Feature 01</div><div class="deco-line"></div><h2>Volunteer <span style="color:#3B82F6">Dashboard</span></h2><p>A personalized home base where volunteers see their upcoming shifts, hours logged, and quick actions — all at a glance.</p><ul class="feature-list"><li>Upcoming shift reminders & countdowns</li><li>Cumulative hours tracking</li><li>One-tap check-in access</li><li>Notification center for new opportunities</li></ul></div>
+    <div class="screen-img-wrap"><img src="./dashboard.png" alt="Dashboard"></div>
+  </div>
+</div>
+
+<!-- SLIDE 5: SCHEDULE -->
+<div class="slide">
+  <div class="grid-bg"></div>
+  <div class="screen-slide">
+    <div class="content"><div class="slide-num">Feature 02</div><div class="deco-line"></div><h2>Shift Planning <span style="color:#84CC16">&</span> Discovery</h2><p>Volunteers browse available shifts by date, category, location, and required role — and sign up in seconds.</p><ul class="feature-list"><li>Interactive calendar with event dots</li><li>Filter by skill, role & location</li><li>Add to calendar (iCal & Google)</li><li>Real-time seat availability</li></ul></div>
+    <div class="screen-img-wrap"><img src="./schedule.png" alt="Schedule"></div>
+  </div>
+</div>
+
+<!-- SLIDE 6: ACTIVE SHIFT -->
+<div class="slide">
+  <div class="grid-bg"></div>
+  <div class="screen-slide">
+    <div class="content"><div class="slide-num">Feature 03</div><div class="deco-line"></div><h2>Active Shift <span style="color:#3B82F6">Tracking</span></h2><p>During a live event, volunteers and supervisors have real-time tools to manage attendance, log incidents, and track assets.</p><ul class="feature-list"><li>Live check-in / check-out</li><li>Incident reporting workflow</li><li>Asset check-out management</li><li>Shift close-out & summary</li></ul></div>
+    <div class="screen-img-wrap"><img src="./active-shift.png" alt="Active Shift"></div>
+  </div>
+</div>
+
+<!-- SLIDE 7: AI MATCH -->
+<div class="slide">
+  <div class="grid-bg"></div>
+  <div class="screen-slide">
+    <div class="content"><div class="slide-num">Feature 04</div><div class="deco-line"></div><h2>AI <span class="gradient-text">Auto-Match</span></h2><p>Admins trigger smart auto-assignment that scores every volunteer against required shift skills, maximizing coverage in one click.</p><ul class="feature-list"><li>Skill-based scoring algorithm</li><li>Respects volunteer hour caps</li><li>Manual override supported</li><li>Waitlist management</li></ul></div>
+    <div class="screen-img-wrap"><img src="./roster.png" alt="AI Match"></div>
+  </div>
+</div>
+
+<!-- SLIDE 8: ADMIN -->
+<div class="slide">
+  <div class="grid-bg"></div>
+  <div class="screen-slide">
+    <div class="content"><div class="slide-num">Feature 05</div><div class="deco-line"></div><h2>Platform <span style="color:#3B82F6">Administration</span></h2><p>A full admin suite for creating events, managing rosters, sending communications, and viewing analytics across all activity.</p><ul class="feature-list"><li>Event creation with skill tags</li><li>Volunteer roster management</li><li>Multi-channel communications</li><li>Platform-wide analytics</li></ul></div>
+    <div class="screen-img-wrap"><img src="./admin.png" alt="Admin"></div>
+  </div>
+</div>
+
+<!-- SLIDE 9: TECH STACK -->
+<div class="slide" style="text-align:center">
+  <div class="grid-bg"></div>
+  <span class="badge badge-blue" style="margin-bottom:16px">✦ Built to Scale</span>
+  <h2 class="heading-lg" style="margin-bottom:8px">Modern <span class="gradient-text">Technology Stack</span></h2>
+  <p style="color:#94A3B8;margin-bottom:28px">Engineered for performance, accessibility, and a seamless experience on any device.</p>
+  <div class="tech-grid">
+    <div class="tech-card"><div class="tech-icon">▲</div><div><h3>Next.js 16 App Router</h3><p>Server-first rendering with dynamic routing and edge-ready deployment</p></div></div>
+    <div class="tech-card"><div class="tech-icon">📱</div><div><h3>Progressive Web App</h3><p>Installable on iOS & Android with offline caching via Service Workers</p></div></div>
+    <div class="tech-card"><div class="tech-icon">🎨</div><div><h3>Tailwind CSS v4</h3><p>Utility-first design system with consistent, responsive layouts</p></div></div>
+    <div class="tech-card"><div class="tech-icon">🔷</div><div><h3>TypeScript</h3><p>Type-safe codebase for reliability, maintainability, and DX</p></div></div>
+  </div>
+</div>
+
+<!-- SLIDE 10: CTA -->
+<div class="slide" style="text-align:center">
+  <div class="grid-bg"></div>
+  <div class="logo-mark" style="margin-bottom:20px"><div class="icon">🤝</div><span>Tribute</span></div>
+  <h1 class="heading-xl gradient-text" style="margin-bottom:16px">Ready to Transform<br>Volunteer Management?</h1>
+  <p style="font-size:1.1rem;color:#94A3B8;max-width:500px;margin:0 auto 36px;line-height:1.7">Built for organizations that believe great volunteers deserve a great experience.</p>
+  <div class="cta-stats">
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Core Modules</div></div>
+    <div class="stat"><div class="stat-num">PWA</div><div class="stat-label">Mobile Ready</div></div>
+    <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Auto-Matching</div></div>
+  </div>
+  <button class="cta-btn">Explore the Platform</button>
+</div>
+
+</body>
+</html>

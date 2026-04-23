@@ -255,6 +255,12 @@ h1 {
 }
 
 /* --- Project Grid --- */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: contents;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -270,6 +276,7 @@ h1 {
     transition: all 0.2s;
     position: relative;
     box-shadow: 6px 6px 0px var(--midnight-blue);
+    cursor: pointer;
 }
 
 .project-card:hover {
