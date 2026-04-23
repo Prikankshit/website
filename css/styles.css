@@ -255,14 +255,19 @@ h1 {
 }
 
 /* --- Project Grid --- */
-.project-link {
-    text-decoration: none !important;
+.stretched-link {
+    text-decoration: none;
     color: inherit;
-    display: block;
 }
 
-.project-link * {
-    text-decoration: none !important;
+.stretched-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .projects-grid {
